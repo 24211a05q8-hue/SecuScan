@@ -141,3 +141,54 @@ After refreshing, run the backend tests to confirm the plugin loads correctly:
 ```bash
 cd backend && python -m pytest
 ```
+#Input Schemas Examples
+{
+  "key": "username",
+  "type": "text",
+  "label": "Username",
+  "required": true
+}
+{
+  "key": "theme",
+  "type": "select",
+  "label": "Theme",
+  "options": ["light", "dark"],
+  "required": true
+}
+{
+  "key": "tags",
+  "type": "multiselect",
+  "label": "Tags",
+  "options": ["bug", "feature", "docs"]
+}
+{
+  "key": "subscribe",
+  "type": "checkbox",
+  "label": "Subscribe to updates",
+  "default": false
+}
+{
+  "key": "age",
+  "type": "number",
+  "label": "Age",
+  "min": 0,
+  "max": 100,
+  "required": false
+}
+{
+  "key": "file_path",
+  "type": "file",
+  "label": "File Path"
+}
+## Required vs Optional Fields
+
+- `required: true` → field must be provided  
+- `required: false` → field is optional  
+- `default` → fallback value if not provided
+
+{
+  "preset": {
+    "theme": "dark",
+    "subscribe": true
+  }
+}
